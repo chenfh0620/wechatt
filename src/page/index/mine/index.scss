@@ -1,0 +1,53 @@
+.mine {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0.86rem;
+  bottom: 0;
+  color: #000000;
+  background: #f0eff5;
+  .mint-cell-wrapper {
+    font-size: 14px;
+  }
+  .top {
+    margin-top: 15px;
+    height: 86px;
+    .mint-cell-wrapper {
+      padding: 11px 0;
+      margin-left: 14px;
+    }
+    .avatar {
+      background: #eeeeee;
+      width: 64px;
+      height: 64px;
+      border-radius: 5px;
+    }
+    .mint-cell-title {
+      width: 80px;
+      flex: none;
+    }
+    .mint-cell-value {
+      justify-content: space-between;
+      flex: 1;
+      .info {
+        color: #000000;
+        .title {
+          font-size: 16px;
+          margin-bottom: 10px;
+        }
+      }
+      .qrcode {
+        margin-right: 20px;
+        width: 17px;
+        height: 17px;
+      }
+    }
+  }
+  .property, .collection, .setting {
+    margin-top: 21px;
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

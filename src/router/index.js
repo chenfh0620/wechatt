@@ -1,31 +1,37 @@
-import index from '../page/index';
-import wechat from '../page/index/wechat';
-import book from '../page/index/book';
-import discover from '../page/index/discover';
-import mine from '../page/index/mine';
+import Index from '../page/index';
+import Wechat from '../page/index/wechat';
+import Book from '../page/index/book';
+import Discover from '../page/index/discover';
+import Mine from '../page/index/mine';
+import Chat from '../page/chat';
 
 export default [
   {
     path: '/',
     redirect: '/index',
-    component: index,
+    component: Index,
     children: [
       {
         path: '/index',
-        component: wechat
+        component: Wechat
       },
       {
         path: '/book',
-        component: book
+        component: Book
       },
       {
         path: '/discover',
-        component: discover
+        component: Discover
       },
       {
         path: '/mine',
-        component: mine
+        component: Mine
       }
     ]
+  },
+  {
+    name: 'chat',
+    path: '/chat/:id',
+    component: Chat
   }
 ]

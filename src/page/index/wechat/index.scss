@@ -8,6 +8,8 @@
     height: 1rem;
     padding: 9px 0;
     margin-left: 9px;
+    transition-duration: .3s;
+    transition-timing-function: linear;
     @include border-1px(bottom, #d6d5db);
     .content {
       position: relative;
@@ -50,7 +52,7 @@
       .btn-delete {
         background-color: #b4282d;
         color: #ffffff;
-        width: 1.5rem;
+        width: 75px;
         height: 1.36rem;
         line-height: 1.36rem;
         text-align: center;

@@ -3,7 +3,16 @@
   <mt-header 
     :title="showTitle"
     fixed>
-    <i class="iconfont icon-add" slot="right"></i>
+    <i 
+      v-if="currentTab=='/index'"
+      class="iconfont icon-add" 
+      slot="right"
+      @click="moreFun"></i>
+    <i 
+      v-if="currentTab=='/book'"
+      class="iconfont icon-addpeople_fill" 
+      slot="right"
+      @click="addPeople"></i>
     </mt-header>
   <router-view></router-view>
   <mt-tabbar v-model="currentTab" fixed>
@@ -15,7 +24,7 @@
     </mt-tab-item>
     <mt-tab-item id="/book">
       <i 
-        :class="['iconfont', currentTab == '/book' ? 'icon-addpeople_fill' : 'icon-addpeople']" 
+        :class="['iconfont', currentTab == '/book' ? 'icon-addressbook_fill' : 'icon-addressbook']" 
         slot="icon"></i>
       通讯录
     </mt-tab-item>
@@ -86,7 +95,10 @@ export default {
     }
   },
   created() {
-    console.log(this);
+  },
+  methods: {
+    moreFun() {},
+    addPeople() {}
   }
 }
 </script>
