@@ -4,7 +4,6 @@
   right: 0;
   bottom: 0;
   top: 0;
-  background: #ebebeb;
 }
 .mint-header {
   background-color: #1c1b21;
@@ -12,6 +11,93 @@
   height: 0.86rem;
   .iconfont {
     font-size: 22px;
+  }
+}
+.content {
+  position: fixed;
+  bottom: 1rem;
+  top: 0.86rem;
+  left: 0;
+  right: 0;
+  background: #ebebeb;
+  padding: 0.3rem 0.2rem;
+  overflow-y: scroll;
+  .chat-list {
+    ul {
+    }
+    .chat-item {
+      display: block;
+      @include clearfix();
+      margin-bottom: 14px;
+      .date {
+        text-align: center;
+        padding: 14px 0;
+      }
+      .avatar {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+      }
+      .message {
+        position: relative;
+        display: inline-block;
+        max-width: 4.7rem;
+        padding: 9px 10px;
+        line-height: 20px;
+        font-size: 14px;
+        color: #000000;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+    }
+    .self {
+      .avatar {
+        float: right;
+        margin-left: 10px;
+      }
+      .message {
+        float: right;
+        background: #a2e65b;
+        border: 1px solid #6fb739;
+        &::after {
+          content: ' ';
+          display: block;
+          position: absolute;
+          right: -5px;;
+          top: 15px;
+          width: 8px;
+          height: 8px;
+          background: #a2e65b;
+          transform: rotate(45deg);
+          border-right: 1px solid #6fb739;
+          border-top: 1px solid #6fb739;
+        }
+      }
+    }
+    .other {
+      .avatar {
+        float: left;
+        margin-right: 10px;
+      }
+      .message {
+        float: left;
+        background: #ffffff;
+        border: 1px solid #cbcbcb;
+        &::before {
+          content: ' ';
+          display: block;
+          position: absolute;
+          left: -5px;;
+          top: 15px;
+          width: 8px;
+          height: 8px;
+          background: #ffffff;
+          transform: rotate(45deg);
+          border-left: 1px solid #cbcbcb;
+          border-bottom: 1px solid #cbcbcb;
+        }
+      }
+    }
   }
 }
 footer {

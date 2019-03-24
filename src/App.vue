@@ -19,9 +19,11 @@ export default {
   },
   watch: {
     '$route' (to, from) {
-      if (to.path==='/index') {
+      if (to.path === '/index') {
         this.routerTransition = 'router-back-silde';
-      } else {
+      } else if (to.path === '/login' || to.path === '/register') {
+
+      }else {
         this.routerTransition = 'router-to-silde';
       }
     }

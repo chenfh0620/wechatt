@@ -1,37 +1,37 @@
 export const throwErr = (code, response) => {
   let message = '请求错误';
   switch (code) {
-    case '400':
+    case 400:
       message = '请求错误';
       break;
-    case '401':
+    case 401:
       message = '未授权';
       break;
-    case '403':
+    case 403:
       message = '拒绝访问';
       break;
-    case '404':
+    case 404:
       message = `请求地址不存在：${response.config.url}`;
       break;
-    case '408':
+    case 408:
       message = '请求超时';
       break;
-    case '500':
+    case 500:
       message = '服务器内部错误';
       break;
-    case '501':
+    case 501:
       message = '服务器未实现';
       break;
-    case '502':
+    case 502:
       message = '网关错误';
       break;
-    case '503':
+    case 503:
       message = '服务不可用';
       break;
-    case '504':
+    case 504:
       message = '网关超时';
       break;
-    case '505':
+    case 505:
       message = 'HTTP版本不受支持';
       break;
     default:

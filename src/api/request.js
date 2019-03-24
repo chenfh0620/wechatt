@@ -1,8 +1,6 @@
 import axios from 'axios';
 import { throwErr } from '@/utils';
-import store from '@/store';
-import { Message } from 'mint-ui';
-import router from '@router';
+import { Toast } from 'mint-ui';
 
 // 过滤请求
 axios.interceptors.request.use(
@@ -15,12 +13,17 @@ axios.interceptors.request.use(
   }
 );
 
+axios.defaults.withCredentials = true;
+
 // 拦截响应
 axios.interceptors.response.use(
   response => {
     if (response.data.code === 0) {
       return Promise.resolve(response.data);
     } else {
+      Toast({
+        message: response.data.message
+      });
       return Promise.reject(response.data);
     }
   },
@@ -29,9 +32,13 @@ axios.interceptors.response.use(
       let res = {};
       res.code = error.response.status;
       res.msg = throwErr(error.response.status, error.response); // throwErr 捕捉服务器错误
+      Toast({
+        message: res.msg
+      });
       return Promise.reject(res);
+    } else {
+      return Promise.reject(error);
     }
-    return Promise.reject(error);
   }
 );
 

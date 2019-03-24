@@ -1,3 +1,5 @@
+import Auth from '../page/auth/index';
+import Register from '../page/auth/register';
 import Index from '../page/index';
 import Wechat from '../page/index/wechat';
 import Book from '../page/index/book';
@@ -7,9 +9,26 @@ import Chat from '../page/chat';
 
 export default [
   {
+    path: '/login',
+    component: Auth,
+    meta: {
+      needAuth: false
+    },
+  },
+  {
+    path: '/register',
+    component: Register,
+    meta: {
+      needAuth: false
+    },
+  },
+  {
     path: '/',
     redirect: '/index',
     component: Index,
+    meta: {
+      needAuth: true
+    },
     children: [
       {
         path: '/index',
@@ -32,6 +51,9 @@ export default [
   {
     name: 'chat',
     path: '/chat/:id',
-    component: Chat
+    component: Chat,
+    meta: {
+      needAuth: true
+    },
   }
 ]

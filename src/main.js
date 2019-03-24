@@ -20,6 +20,20 @@ const router = new VueRouter({
   }
 });
 
+router.beforeEach((to, from, next) => {
+  const session = localStorage.getItem('session');
+  if(to.matched.some(item => item.meta.needAuth) && !session) {
+    next({
+      path: '/login',
+      query: {
+        redirect: to.fullPath
+      }
+    });
+  } else {
+    next();
+  }
+});
+
 new Vue({
   router,
   render: h => h(App),
